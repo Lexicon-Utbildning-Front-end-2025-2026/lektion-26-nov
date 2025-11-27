@@ -13,64 +13,70 @@
 
 <body>
     <header class="container header-inner">
-        <div class="brand"><a href="/">TechBlog</a></div>
+        <a class="brand" href="/">TechBlog</a>
         <nav aria-label="Primary" class="main-nav">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/categories">Categories</a>
-            <a href="/contact">Contact</a>
+            <ul role="list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
         </nav>
-        <button class="btn btn-primary">Subscribe</button>
-
+        <a href="/subscribe" class="btn btn-primary">Subscribe</a>
     </header>
-
-    <section class="hero">
-        <div class="container hero-inner">
-            <h1>Welcome to TechBlog</h1>
-            <p class="lead">Discover the latest insights in web development, design, and technology</p>
-            <form class="search" role="search">
-                <input aria-label="Search articles" placeholder="Search articles..." />
-            </form>
-        </div>
-    </section>
-
-    <div class="container layout">
-        <div class="flow">
-            <div class="section-head">
+    <main class="container layout">
+        <header aria-labelledby="heading-1" class="hero">
+            <div class="container hero-inner">
+                <h1 id="heading-1">Welcome to TechBlog</h1>
+                <p class="lead">Discover the latest insights in web development, design, and
+                    technology</p>
+                <search>
+                    <form class="search">
+                        <label for="article_search">
+                            <span class="sr-only">Search articles</span>
+                        </label>
+                        <input id="article_search" placeholder="Search articles..." />
+                    </form>
+                </search>
+            </div>
+        </header>
+        <section class="flow">
+            <header class="section-head">
                 <h2>Featured articles</h2>
                 <p class="muted">Latest insights and tutorials from our expert writers</p>
-            </div>
-
-            <div class="card">
+            </header>
+            <article aria-labelledby="article-heading-1" class="card">
                 <img src="https://www.figma.com/api/mcp/asset/a5104b48-336f-4657-9c3a-bc3fd2c352a4"
                     alt="Article image" />
                 <div class="card-body">
-                    <div class="meta-row">
-                        <span class="badge text-sm text-semibold blue">Web Development</span>
-                        <time class="muted">January 15, 2024</time>
-                    </div>
-                    <h3 class="card-title">Modern CSS Grid techniques for responsive design</h3>
+                    <header>
+                        <div class="meta-row">
+                            <span class="badge text-sm text-semibold blue">Web Development</span>
+                            <time class="muted">January 15, 2024</time>
+                        </div>
+                        <h3 id="article-heading-1" class="card-title">Modern CSS Grid techniques for responsive design
+                        </h3>
+                    </header>
+
                     <p class="muted">Learn how to create flexible and responsive layouts using the latest CSS Grid
                         features. This
                         comprehensive guide covers everything from basic grid concepts to advanced techniques.</p>
-                    <a href="/" class="pb-2">Read more...</a>
-                    <div class="card-footer">
+
+                    <a href="/" class="pb-2" aria-label="Read more about modern css grid">Read more...</a>
+                    <footer class="card-footer">
                         <div class="author">
                             <img class="avatar"
-                                src="https://www.figma.com/api/mcp/asset/0953e1d4-e3c1-4e54-b241-c965352e2a52"
-                                alt="John Smith" />
+                                src="https://www.figma.com/api/mcp/asset/0953e1d4-e3c1-4e54-b241-c965352e2a52" alt="" />
                             <div>
-                                <div class="text-semibold">John Smith</div>
+                                <a href="mailto:john@ll.se" class="text-semibold">John Smith</a>
                                 <div class="text-sm muted">Senior Developer</div>
                             </div>
                         </div>
                         <div class="text-sm muted">8 min read</div>
-                    </div>
+                    </footer>
                 </div>
-            </div>
-
-            <div class="card">
-
+            </article>
+            <article class="card">
                 <img src="https://www.figma.com/api/mcp/asset/8886908e-3141-42ef-bda9-658c5dfa422c"
                     alt="Article image" />
                 <div class="card-body">
@@ -82,8 +88,11 @@
                     <p class="muted">Discover essential techniques for creating inclusive web experiences. From semantic
                         HTML to
                         ARIA attributes, learn how to make your applications accessible to all users.</p>
-                    <h4>Team Member Skills</h4>
+
                     <table>
+                        <caption>
+                            Team Member Skills
+                        </caption>
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -93,22 +102,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Alice</th>
+                                <th scope="row">Alice</th>
                                 <td>Frontend Development</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>Bob</th>
+                                <th scope="row">Bob</th>
                                 <td>Backend Development</td>
                                 <td>8</td>
                             </tr>
                             <tr>
-                                <td>Charlie</th>
+                                <th scope="row">Charlie</th>
                                 <td>UI/UX Design</td>
                                 <td>6</td>
                             </tr>
                         </tbody>
                     </table>
+
                     <a href="/" class="pb-2">Read more...</a>
                     <div class="card-footer">
                         <div class="author">
@@ -123,20 +133,20 @@
                         <div class="text-sm muted">12 min read</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </article>
+        </section>
+    </main>
 
     <footer class="site-footer flow">
         <div class="container footer-inner">
             <section>
                 <h4>TechBlog</h4>
-                <p class="muted">Sharing knowledge and insights about web development, design, and technology.</p>
+                <p>Sharing knowledge and insights about web development, design, and technology.</p>
             </section>
             <section>
                 <h4>Quick Links</h4>
-                <ul class="muted small link-list">
-                    <li>About Us</li>
+                <ul class="small link-list">
+                    <li><a href="/">About Us</a></li>
                     <li>Contact</li>
                     <li>Privacy Policy</li>
                     <li>Terms of Service</li>
@@ -145,7 +155,7 @@
             </section>
             <section>
                 <h4>Categories</h4>
-                <ul class="muted small link-list">
+                <ul class="small link-list">
                     <li>Web Development</li>
                     <li>Design</li>
                     <li>Accessibility</li>
@@ -154,8 +164,10 @@
             </section>
             <section>
                 <h4>Contact Info</h4>
-                <p class="muted small">hello@techblog.com</p>
-                <p class="muted small">+1 (234) 567-890</p>
+                <address>
+                    <a href="mailto:hello@techblog.com" class="small">hello@techblog.com</a>
+                    <a href="tel:+1234567890" class="small">+1 (234) 567-890</a>
+                </address>
             </section>
         </div>
         <div class="container footer-bottom muted small"> 2025 TechBlog. All rights reserved.</div>
